@@ -1,0 +1,6 @@
+Projekt Zaliczeniowy: Katarzyna Jaworska
+
+Na samym początku deklarujemy zmienne, które będą używane w programie.
+Zmienna imagesList przechowuje nazwy plików ( a dokładnie ścieżkę ).
+
+W funkcji setup(), która jest wywoływana tylko na samym początku określamy wymiary.
