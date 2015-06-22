@@ -20,12 +20,16 @@ void setup() {
 }
 
 void draw() {
+  torch();
+  updatePixels();
+}
+
+void loadRandomImage()
+{
   int index = int(random(imagesList.length));  // Pobierz losowy obrazek
   img = loadImage(imagesList[index]);
   img.loadPixels();
   loadPixels(); 
-  torch(); 
-  updatePixels();
 }
 
 void torch() {
