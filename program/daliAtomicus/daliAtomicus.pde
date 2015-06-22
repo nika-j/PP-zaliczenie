@@ -8,6 +8,7 @@ PFont f;
 void setup() {
   size(460, 369);
   background(200);
+  frameRate(30);
   f = createFont("Arial",20,true);
   fill(0);
   textFont(f);
@@ -16,15 +17,10 @@ void setup() {
   text("w różnych wersjach oraz wariacje na jej",20, 180);
   text("temat stworzone przez innych artystów", 20, 220);
   text("K. J.", 30, 300);
-  
-  //Zaladowanie pierwszego zdjecia
-  img = loadImage("images/1.jpg");
-  img.loadPixels();
-  loadPixels();
 }
 
 void draw() {
-  int index = int(random(imagesList.length));  // Get a random image
+  int index = int(random(imagesList.length));  // Pobierz losowy obrazek
   img = loadImage(imagesList[index]);
   img.loadPixels();
   loadPixels(); 
@@ -45,7 +41,7 @@ void torch() {
       float maxdist = 50;
       float d = dist(x, y, mouseX, mouseY);
       float adjustbrightness = 255*(maxdist-d)/maxdist;
-      
+
       r += adjustbrightness;
       g += adjustbrightness;
       b += adjustbrightness;
