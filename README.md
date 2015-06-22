@@ -1,2 +1,3 @@
 # PP-zaliczenie
-Projekt zaliczeniowy
+Projekt zaliczeniowy zrealizowany przez Katarzyne Jaworska
+oparty o przyklad https://www.processing.org/examples/brightness.html
