@@ -4,6 +4,7 @@ String[] imagesList = {"images/1.jpg", "images/2.jpg", "images/3.jpg",
 "images/8.jpg", "images/9.jpg", "images/10.jpg"};
 PImage img;
 PFont f;
+int first = 0;
 
 void setup() {
   size(460, 369);
@@ -20,8 +21,22 @@ void setup() {
 }
 
 void draw() {
-  torch();
-  updatePixels();
+
+  if (mousePressed)
+  {
+     loadRandomImage(); 
+     if ( first == 0 )
+     {
+       first = 1;
+     }
+  }
+  
+  if ( first > 2 )
+  {
+    torch();
+    updatePixels();
+  }
+  
 }
 
 void loadRandomImage()
