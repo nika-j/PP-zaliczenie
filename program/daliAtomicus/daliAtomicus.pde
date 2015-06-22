@@ -21,7 +21,6 @@ void setup() {
 }
 
 void draw() {
-
   if (mousePressed)
   {
      loadRandomImage(); 
@@ -30,13 +29,17 @@ void draw() {
        first = 1;
      }
   }
-  
+
   if ( first > 2 )
   {
     torch();
     updatePixels();
   }
   
+  if ( first == 1 )
+  {
+    first = 100;
+  }
 }
 
 void loadRandomImage()
