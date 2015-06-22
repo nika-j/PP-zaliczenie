@@ -21,8 +21,12 @@ void setup() {
   loadPixels();
 }
 
-void draw()
-{
+void draw() {
+
+  updatePixels();
+}
+
+void torch() {
  for (int x = 0; x < img.width; x++) {
     for (int y = 0; y < img.height; y++ ) {
       int loc = x + y*img.width;
@@ -32,7 +36,7 @@ void draw()
       g = green (img.pixels[loc]);
       b = blue (img.pixels[loc]);
       
-      float maxdist = 50;//dist(0,0,width,height);
+      float maxdist = 50;
       float d = dist(x, y, mouseX, mouseY);
       float adjustbrightness = 255*(maxdist-d)/maxdist;
       
@@ -48,6 +52,5 @@ void draw()
 
       pixels[y*width + x] = c;
     }
-  } 
-  updatePixels();
+  }  
 }
