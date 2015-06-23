@@ -26,19 +26,14 @@ void draw() {
      loadRandomImage(); 
      if ( first == 0 )
      {
-       first = 1;
+       first = 100;
      }
   }
 
-  if ( first > 2 )
+  if ( first > 1 )
   {
     torch();
     updatePixels();
-  }
-  
-  if ( first == 1 )
-  {
-    first = 100;
   }
 }
 
