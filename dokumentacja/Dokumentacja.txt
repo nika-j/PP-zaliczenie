@@ -20,6 +20,17 @@ W następnych krokach wypisujemy na ekranie tekst.
 Wszystko co zostało napisane w funckji setup() wywołane jest raz na początku programu, dlatego też
 zaraz po uruchomieniu widzimy okno z tekstem.
 
+Nastepnie wywolywana jest funkcja draw(). Można o niej powiedzieć, iż to jest funckja wywoływana w nieskończonej
+pętli. Wykonywane są kolejno w niej linie kodu. Za pierwszym razem po wywolania sprawdzana jest zmienna
+mousePressed, która jest ustawiana przez processing na true jeżeli klawisz myszy został w tej chwili naciśnięty.
 
+Gdy zanotujemy klinięcie myszą ładujemy obrazek. Aby to zrobić wywoływana jest funkcja pomocnicza, która
+została napisana przez autorkę. Na samym początku wykorzystując funkcję random() losujemy liczbę, ją następnie wykorzystujemy jako indeks w tablicy nazwm obrazów, dzięki czemu otrzymujemy losowanie obrazka.
+Nastepnie ladujemy obraz oraz zapisujemy dane o pikselach do tablicy pixels. Dzięki temu możemy później manipulować nimi. Co ważne sprawdzamy czy było to pierwsze kliknięcie, poprzez sprawdzenie czy wartość zmiennej first jest równa 0, jeżeli tak to ustawiamy ją na wartość dodatnią, aby w dalszej części programu to wykorzystać. Następnie sprawdzamy czy zmienna first jest większa od 1, gdyż nie chcemy wywoływać tej części programu dopóki nie było pierwszego kliknięcia myszą.
+
+Jeżeli zanotowaliśmy kliknięcie no następuje najważniejsza część programu czyli wywołana jest funkcja torch(). W niej następuje modyfikacja pixeli tak aby tylko mały obszar zdjęcia był widoczny, a reszta pozostawała czarna. Obliczane jest to także na podstawie miejsca, w którym w obecnej chwili znajduje się kursor.
+
+Po modyfikacji wywołujemy funkcję updatePixels(), która aktualizuje nasze okno z danymi z pikseli zapisanych w tablicy pixels[].
+ 
 
 
