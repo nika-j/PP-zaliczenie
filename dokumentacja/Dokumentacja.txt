@@ -1,36 +1,42 @@
 Projekt Zaliczeniowy: Katarzyna Jaworska
 
 Na samym początku deklarujemy zmienne, które będą używane w programie.
-Zmienna imagesList przechowuje nazwy plików ( a dokładnie ścieżkę ).
+Zmienna imagesList przechowuje nazwy plików-obrazków.
 Jest to tablica zmiennych typu string.
 
 W funkcji setup(), która jest wywoływana tylko na samym początku określamy wymiary
 wyświetlanego okna, które podajemy w pixelach. Następnie wywoływana jest funkcja
 background, która ustala kolor tła na wyświetlanym oknie. Podana została wartość 200 w RGB.
-Kolejna funkcja frameRate ustawia ile ramek będzie wyświetlanych na sekundę. Jest to dla nas
-bardzo istotne gdyż wpływa na to jak będzie wyświetlana treść (w tym projekcie ingerencja w zmienną
-pozwala zaobserowawać dość szybko skutki zmian). 
+Kolejna funkcja frameRate ustawia ile ramek będzie wyświetlanych na sekundę. Jest to istotne
+gdyż wpływa to jak będzie wyświetlana treść.
 
-Nastepne linie createFont ustawiaja typ czcionki, jej wielkość oraz czy ma być gładka (tak na prawdę
-jest do konwersja do typu znanego przez processing). Dalej ustawiane jest wypełnienie dla tekstu,
-jeśli chodzi o kolor i wybór wcześniej zadeklarowanej czcionki do użycia.
+Nastepne linie createFont ustawiają typ czcionki. Dalej ustawiane jest wypełnienie
+dla tekstu - kolor i wybór wcześniej zadeklarowanej czcionki do użycia.
 
-W następnych krokach wypisujemy na ekranie tekst.
+W następnych krokach wpisujemy na ekranie tekst.
 
-Wszystko co zostało napisane w funckji setup() wywołane jest raz na początku programu, dlatego też
-zaraz po uruchomieniu widzimy okno z tekstem.
+Wszystko co zostało napisane w funkcji setup() wywołane jest raz na początku programu, 
+dlatego też zaraz po uruchomieniu widzimy okno z tekstem.
 
-Nastepnie wywolywana jest funkcja draw(). Można o niej powiedzieć, iż to jest funckja wywoływana w nieskończonej
-pętli. Wykonywane są kolejno w niej linie kodu. Za pierwszym razem po wywolania sprawdzana jest zmienna
-mousePressed, która jest ustawiana przez processing na true jeżeli klawisz myszy został w tej chwili naciśnięty.
+Nastepnie wywolywana jest funkcja draw(). W niej linie kodu wykonywane są kolejno.
 
-Gdy zanotujemy klinięcie myszą ładujemy obrazek. Aby to zrobić wywoływana jest funkcja pomocnicza, która
-została napisana przez autorkę. Na samym początku wykorzystując funkcję random() losujemy liczbę, ją następnie wykorzystujemy jako indeks w tablicy nazwm obrazów, dzięki czemu otrzymujemy losowanie obrazka.
-Nastepnie ladujemy obraz oraz zapisujemy dane o pikselach do tablicy pixels. Dzięki temu możemy później manipulować nimi. Co ważne sprawdzamy czy było to pierwsze kliknięcie, poprzez sprawdzenie czy wartość zmiennej first jest równa 0, jeżeli tak to ustawiamy ją na wartość dodatnią, aby w dalszej części programu to wykorzystać. Następnie sprawdzamy czy zmienna first jest większa od 1, gdyż nie chcemy wywoływać tej części programu dopóki nie było pierwszego kliknięcia myszą.
 
-Jeżeli zanotowaliśmy kliknięcie no następuje najważniejsza część programu czyli wywołana jest funkcja torch(). W niej następuje modyfikacja pixeli tak aby tylko mały obszar zdjęcia był widoczny, a reszta pozostawała czarna. Obliczane jest to także na podstawie miejsca, w którym w obecnej chwili znajduje się kursor.
+Za pierwszym razem po wywołaniu sprawdzana jest zmienna mousePressed,
+która jest ustawiana przez processing na true jeżeli klawisz myszy został w tej chwili naciśnięty.
+
+Gdy zanotujemy kliknięcie, myszą ładujemy obrazek. Aby to zrobić wywoływana jest funkcja pomocnicza.
+Na samym początku wykorzystując funkcję random() losujemy liczbę, ją następnie wykorzystujemy
+jako indeks w tablicy nazw obrazów, dzięki czemu otrzymujemy losowanie obrazka. 
+Następnie ładujemy obraz oraz zapisujemy dane o pikselach do tablicy pixels. 
+Dzięki temu możemy później nimi manipulować. Co ważne sprawdzamy czy było to pierwsze kliknięcie,
+poprzez sprawdzenie czy wartość zmiennej first jest równa 0,
+jeżeli tak to ustawiamy ją na wartość dodatnią, aby w dalszej części programu to wykorzystać.
+Następnie sprawdzamy czy zmienna first jest większa od 1, gdyż nie chcemy
+wywoływać tej części programu dopóki nie było pierwszego kliknięcia myszą.
+
+Jeżeli zanotowaliśmy kliknięcie to następuje najważniejsza część programu czyli wywołana jest funkcja torch().
+Tu wykorzystano przykład ze strony processingu: https://www.processing.org/examples/brightness.html
+W niej następuje modyfikacja pixeli tak aby tylko mały obszar zdjęcia był widoczny, a reszta pozostawała czarna.
+Obliczane jest to także na podstawie miejsca, w którym w obecnej chwili znajduje się kursor.
 
 Po modyfikacji wywołujemy funkcję updatePixels(), która aktualizuje nasze okno z danymi z pikseli zapisanych w tablicy pixels[].
- 
-
-
